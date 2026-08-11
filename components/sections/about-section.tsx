@@ -52,7 +52,7 @@ export function AboutSection() {
               </div>
               <div className="text-right">
                 <span className="text-gray-500 block text-[10px]">BASE</span>
-                <span className="text-gray-200">INDIA</span>
+                <span className="text-gray-200">KOLKATA, INDIA</span>
               </div>
             </div>
           </div>

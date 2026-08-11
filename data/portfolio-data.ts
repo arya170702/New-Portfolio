@@ -48,7 +48,7 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "Subhadip Mondal",
     title: "Full-Stack Developer",
-    location: "India (IST / UTC+5:30)",
+    location: "Kolkata, India (IST / UTC+5:30)",
     currentRole: "Full-Stack Developer Intern @ NOTAPEX",
     status: "Available for Opportunities",
     email: "aryasubha011@gmail.com",

@@ -121,7 +121,7 @@ export function HeroSection() {
           <span className="text-gray-600">•</span>
           <span className="flex items-center gap-1.5 text-gray-300">
             <MapPin className="w-3.5 h-3.5 text-emerald-400" />
-            <span>INDIA</span>
+            <span>KOLKATA, INDIA</span>
           </span>
         </div>
 
