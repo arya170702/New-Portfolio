@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://aryasubhaa.netlify.app/sitemap.xml
+LLMs-txt: https://aryasubhaa.netlify.app/llms.txt

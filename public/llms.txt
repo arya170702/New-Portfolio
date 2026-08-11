@@ -1,0 +1,64 @@
+# Subhadip Mondal — Full-Stack Developer & Systems Engineer
+
+> Full-Stack Developer Intern @ NOTAPEX | B.Tech CSE @ VIT Vellore | Based in Kolkata, India (IST / UTC+5:30)
+
+## About Me
+I am a Full-Stack Developer and Systems Engineer focused on bridging visual restraint with backend rigor. I build high-performance web applications, scalable REST APIs, mobile apps, and machine learning tools. My focus is on robust system design, clean architecture, and responsive user interfaces.
+
+- **Email**: aryasubha011@gmail.com
+- **Website**: https://aryasubhaa.netlify.app/
+- **GitHub**: https://github.com/arya170702
+- **LinkedIn**: https://www.linkedin.com/in/subhadip-mondal-07163b198/
+- **Twitter/X**: https://x.com/arya_subhaa
+- **Resume**: https://aryasubhaa.netlify.app/assets/resume.pdf
+
+---
+
+## Core Technical Skills
+
+### Frontend Engineering
+- **Frameworks**: React, Next.js (App Router, Server Components), Redux Toolkit, Tailwind CSS
+- **Languages**: TypeScript, JavaScript (ESNext), HTML5, CSS3/Sass
+- **UI/UX & Motion**: Framer Motion / Motion, Glassmorphism, Responsive Design, Design Systems
+
+### Backend & Cloud Infrastructure
+- **Runtimes & Frameworks**: Node.js, Express.js
+- **Databases & ORMs**: PostgreSQL, MongoDB, Redis, Prisma ORM
+- **Cloud & DevOps**: AWS (S3, EC2), Netlify, Docker, CI/CD Workflows
+- **Real-Time & Security**: Socket.IO, JWT Authentication, OAuth 2.0, Rate Limiting, CORS, Security Protocols
+
+### Mobile & Machine Learning
+- **Mobile Development**: Flutter, React Native
+- **AI & Data Science**: Python, ML algorithms, NumPy, Pandas, Scikit-learn
+
+---
+
+## Featured Work & Projects
+
+1. **NOTAPEX Ecosystem (Internship Project)**
+   - Role: Full-Stack Developer Intern
+   - Tech: React, Node.js, Express, Prisma, PostgreSQL, JWT Authentication
+   - Description: Scalable multi-tenant web application featuring RBAC authentication, admin portal, payment gateway integration, and real-time dashboard analytics.
+
+2. **Personalized Health & Fitness ML Platform**
+   - Tech: React, Python, Scikit-Learn, FastAPI, MongoDB
+   - Description: Predictive health engine generating hyper-personalized meal & exercise regimes based on user daily caloric intake and ML work-life stress predictions.
+
+3. **Interactive Engineering System Map**
+   - Tech: Next.js, React, TypeScript, SVG Graph Visualization
+   - Description: Living system topology visualizer mapping relationships between frontend architectures, database ORMs, security protocols, and cloud infrastructure.
+
+---
+
+## Education & Academic Background
+
+- **Degree**: B.Tech in Computer Science & Engineering
+- **Institution**: Vellore Institute of Technology (VIT), Vellore
+- **CGPA**: 8.02 / 10
+- **Period**: 2020 – 2024
+
+---
+
+## Contact & Opportunities
+I am open to full-stack engineering roles, frontend architecture positions, and ambitious technical collaborations.
+Reach out directly via email at [aryasubha011@gmail.com](mailto:aryasubha011@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/subhadip-mondal-07163b198/).

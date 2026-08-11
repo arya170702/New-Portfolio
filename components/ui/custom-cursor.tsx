@@ -12,11 +12,11 @@ export function CustomCursor() {
   const rawX = useMotionValue(-100);
   const rawY = useMotionValue(-100);
 
-  // Spring-smoothed positions — glow (sluggish, large blob) and dot (snappy)
-  const glowX = useSpring(rawX, { damping: 25, stiffness: 200, mass: 0.5 });
-  const glowY = useSpring(rawY, { damping: 25, stiffness: 200, mass: 0.5 });
-  const dotX  = useSpring(rawX, { damping: 30, stiffness: 350, mass: 0.2 });
-  const dotY  = useSpring(rawY, { damping: 30, stiffness: 350, mass: 0.2 });
+  // Spring-smoothed positions — glow (sluggish) and dot (ultra-snappy)
+  const glowX = useSpring(rawX, { damping: 30, stiffness: 220, mass: 0.4 });
+  const glowY = useSpring(rawY, { damping: 30, stiffness: 220, mass: 0.4 });
+  const dotX  = useSpring(rawX, { damping: 28, stiffness: 450, mass: 0.1 });
+  const dotY  = useSpring(rawY, { damping: 28, stiffness: 450, mass: 0.1 });
 
   useEffect(() => {
     // Only activate on fine pointer devices (desktop)
@@ -70,29 +70,29 @@ export function CustomCursor() {
       window.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [rawX, rawY]); // motion values are stable refs — safe deps
+  }, [rawX, rawY]);
 
   if (!isVisible) return null;
 
-  const glowSize = isHovered ? 280 : 240;
-  const dotSize  = isHovered ? 32  : 12;
+  const glowSize = isHovered ? 140 : 120;
+  const dotSize  = isHovered ? 28  : 10;
 
   return (
     <>
-      {/* Ambient glow blob — driven by spring motion values, 0 React re-renders on move */}
+      {/* Ambient soft glow blob — subtle, 0.08 opacity */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full blur-xl opacity-20 bg-emerald-500 hidden md:block"
+        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full blur-xl opacity-[0.08] bg-emerald-400 hidden md:block"
         style={{ x: glowX, y: glowY, translateX: "-50%", translateY: "-50%" }}
         animate={{ width: glowSize, height: glowSize }}
-        transition={{ type: "spring", damping: 25, stiffness: 200, mass: 0.5 }}
+        transition={{ type: "spring", damping: 25, stiffness: 220, mass: 0.4 }}
       />
 
-      {/* Precision ring dot — snappier spring, same motion value source */}
+      {/* Precision ring dot — ultra snappy */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-emerald-400/50 bg-emerald-400/20 hidden md:block"
+        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-emerald-400/60 bg-emerald-400/15 hidden md:block"
         style={{ x: dotX, y: dotY, translateX: "-50%", translateY: "-50%" }}
         animate={{ width: dotSize, height: dotSize }}
-        transition={{ type: "spring", damping: 30, stiffness: 350, mass: 0.2 }}
+        transition={{ type: "spring", damping: 28, stiffness: 450, mass: 0.1 }}
       />
     </>
   );
