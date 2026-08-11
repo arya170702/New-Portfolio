@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Coffee } from "lucide-react";
+
+const BMC_URL = "https://buymeacoffee.com/aryasubhaa";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 
 const navLinks = [
@@ -94,6 +96,18 @@ export function Navbar() {
 
         {/* Right CTA / Status Pill */}
         <div className="hidden md:flex items-center gap-3">
+          {/* Buy Me a Coffee icon pill */}
+          <a
+            href={BMC_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Buy me a coffee"
+            title="Buy me a coffee ☕"
+            className="glass-pill p-2 rounded-full text-gray-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-all border border-white/10 hover:border-emerald-500/40"
+          >
+            <Coffee className="w-3.5 h-3.5" />
+          </a>
+
           <a
             href={PORTFOLIO_DATA.personal.resumePdf}
             target="_blank"
@@ -143,7 +157,7 @@ export function Navbar() {
               ))}
             </div>
 
-            <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+            <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
               <a
                 href={PORTFOLIO_DATA.personal.resumePdf}
                 target="_blank"
@@ -152,6 +166,15 @@ export function Navbar() {
               >
                 <span>DOWNLOAD CV</span>
                 <ArrowUpRight className="w-4 h-4" />
+              </a>
+              <a
+                href={BMC_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-emerald-400 hover:border-emerald-500/30 text-center font-medium flex items-center justify-center gap-2 transition-all"
+              >
+                <Coffee className="w-3.5 h-3.5" />
+                <span>BUY ME A COFFEE</span>
               </a>
             </div>
           </motion.div>

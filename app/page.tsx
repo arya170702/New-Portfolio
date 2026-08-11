@@ -9,7 +9,9 @@ import { EngineeringMapSection } from "@/components/sections/engineering-map-sec
 import { EngineeringThinkingSection } from "@/components/sections/engineering-thinking-section";
 import { AchievementsSection } from "@/components/sections/achievements-section";
 import { ContactSection } from "@/components/sections/contact-section";
+import { BuyMeACoffeeSection } from "@/components/sections/buymeacoffee-section";
 import { Footer } from "@/components/layout/footer";
+import { VisitorCounter } from "@/components/ui/visitor-counter";
 
 export default function Home() {
   return (
@@ -47,8 +49,15 @@ export default function Home() {
       {/* 08 — CONTACT */}
       <ContactSection />
 
+      {/* 09 — BUY ME A COFFEE */}
+      <BuyMeACoffeeSection />
+
+      {/* Floating visitor counter pill — bottom left */}
+      <VisitorCounter />
+
       {/* FOOTER */}
       <Footer />
     </main>
   );
 }
+

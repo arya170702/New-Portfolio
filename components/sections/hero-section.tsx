@@ -247,29 +247,30 @@ export function HeroSection() {
       </div>
 
       {/* Hero Bottom Bar Metadata */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full pt-6 border-t border-white/10 flex flex-wrap items-start justify-between gap-6 text-xs font-mono-tech text-gray-400">
-        <div className="flex flex-wrap items-start gap-8">
+      <div className="relative z-10 max-w-6xl mx-auto w-full pt-6 border-t border-white/10 flex flex-col sm:flex-row flex-wrap items-start justify-between gap-4 sm:gap-6 text-xs font-mono-tech text-gray-400">
+        {/* Tech Stack Grid — 2-col on mobile, flex row on desktop */}
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-start gap-x-6 gap-y-4 sm:gap-8 w-full sm:w-auto">
           <div>
             <span className="text-gray-600 block text-[10px] mb-1">FRONTEND</span>
-            <span className="text-gray-300">React · Next.js · TypeScript · Redux · Tailwind</span>
+            <span className="text-gray-300 leading-relaxed">React · Next.js · TypeScript · Redux · Tailwind</span>
           </div>
-          <div className="hidden sm:block">
+          <div>
             <span className="text-gray-600 block text-[10px] mb-1">BACKEND & CLOUD</span>
-            <span className="text-gray-300">Node · Express · Prisma · Socket.IO · AWS</span>
+            <span className="text-gray-300 leading-relaxed">Node · Express · Prisma · Socket.IO · AWS</span>
           </div>
-          <div className="hidden md:block">
+          <div>
             <span className="text-gray-600 block text-[10px] mb-1">MOBILE & DATABASES</span>
-            <span className="text-gray-300">Flutter · React Native · PostgreSQL · MongoDB · Redis</span>
+            <span className="text-gray-300 leading-relaxed">Flutter · React Native · PostgreSQL · MongoDB · Redis</span>
           </div>
-          <div className="hidden lg:block">
+          <div>
             <span className="text-gray-600 block text-[10px] mb-1">SECURITY & AI</span>
-            <span className="text-gray-300">JWT · OAuth · Python ML · NumPy · Pandas</span>
+            <span className="text-gray-300 leading-relaxed">JWT · OAuth · Python ML · NumPy · Pandas</span>
           </div>
         </div>
 
         <a
           href="#about"
-          className="flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors group shrink-0"
+          className="flex items-center gap-2 text-gray-400 hover:text-emerald-400 transition-colors group shrink-0 mt-2 sm:mt-0"
         >
           <span>SCROLL FOR SYSTEM OVERVIEW</span>
           <span className="animate-bounce">↓</span>

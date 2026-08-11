@@ -244,49 +244,49 @@ export function EngineeringMapSection() {
           })}
         </svg>
 
-        {/* Hover/Active Info Panel */}
-        <AnimatePresence>
-          {activeNodeData && (
-            <motion.div
-              key={activeNodeData.id}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 8 }}
-              transition={{ duration: 0.2 }}
-              className="absolute bottom-4 left-4 right-4 sm:right-auto sm:max-w-xs p-4 rounded-xl bg-[#0d0d0f]/95 border border-emerald-500/30 backdrop-blur-sm"
-            >
-              <div className="flex items-start justify-between gap-3">
-                <div>
-                  <span className="text-[10px] font-mono-tech text-emerald-400 uppercase block mb-1">
-                    {activeNodeData.type === "project" ? "PROJECT" : activeNodeData.type === "tech" ? "TECHNOLOGY" : "CONCEPT"}
-                  </span>
-                  <h4 className="text-sm font-bold text-white">{activeNodeData.label}</h4>
-                  {activeNodeData.description && (
-                    <p className="text-xs text-gray-400 mt-1 leading-relaxed">{activeNodeData.description}</p>
-                  )}
-                </div>
-                <button
-                  onClick={() => setActiveNode(null)}
-                  className="text-gray-500 hover:text-white text-lg leading-none shrink-0 transition-colors"
-                  aria-label="Close"
-                >
-                  ×
-                </button>
-              </div>
-              <div className="mt-3 pt-3 border-t border-white/10 text-[10px] font-mono-tech text-gray-500">
-                {ENGINEERING_MAP.edges.filter((e) => e.from === activeNodeData.id || e.to === activeNodeData.id).length} CONNECTIONS
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Idle hint */}
+        {/* Idle hint inside map container */}
         {!focused && (
-          <div className="absolute bottom-4 right-4 text-[10px] font-mono-tech text-gray-600 select-none">
+          <div className="absolute bottom-4 right-4 text-[10px] font-mono-tech text-gray-600 select-none pointer-events-none">
             CLICK ANY NODE TO EXPLORE
           </div>
         )}
       </div>
+
+      {/* Selected Node Details Panel — Placed outside map box to prevent node overlap */}
+      <AnimatePresence mode="wait">
+        {activeNodeData && (
+          <motion.div
+            key={activeNodeData.id}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 12 }}
+            transition={{ duration: 0.25 }}
+            className="mt-4 p-5 rounded-2xl glass-card border border-emerald-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl"
+          >
+            <div className="space-y-1.5 max-w-3xl">
+              <div className="flex items-center gap-2 text-[10px] font-mono-tech text-emerald-400 uppercase tracking-widest">
+                <span>{activeNodeData.type === "project" ? "PROJECT" : activeNodeData.type === "tech" ? "TECHNOLOGY" : "CONCEPT"}</span>
+                <span>//</span>
+                <span>
+                  {ENGINEERING_MAP.edges.filter((e) => e.from === activeNodeData.id || e.to === activeNodeData.id).length} ACTIVE CONNECTIONS
+                </span>
+              </div>
+              <h4 className="text-lg font-bold text-white tracking-tight">{activeNodeData.label}</h4>
+              {activeNodeData.description && (
+                <p className="text-xs sm:text-sm text-gray-300 font-light leading-relaxed">
+                  {activeNodeData.description}
+                </p>
+              )}
+            </div>
+            <button
+              onClick={() => setActiveNode(null)}
+              className="px-3.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-mono-tech text-gray-400 hover:text-white transition-colors border border-white/10 shrink-0 self-end sm:self-center cursor-pointer"
+            >
+              DESELECT ✕
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

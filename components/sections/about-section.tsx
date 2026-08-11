@@ -1,9 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
-import { Award, GraduationCap, Code2, ShieldCheck, Terminal } from "lucide-react";
+import { GraduationCap, Code2, ShieldCheck, Terminal } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
+import { PhotoFilmstrip } from "@/components/ui/photo-filmstrip";
+
+// ─── Photos for the filmstrip ────────────────────────────────────────────────
+const FILMSTRIP_PHOTOS = [
+  { src: "/assets/photo-1.jpg", alt: "Subhadip Mondal - Cliff Sunset" },
+  { src: "/assets/photo-2.jpg", alt: "Subhadip Mondal - Night Beach" },
+  { src: "/assets/photo-3.jpg", alt: "Subhadip Mondal - Beach Sunset" },
+  { src: "/assets/photo-4.jpg", alt: "Subhadip Mondal - Outdoor Garden" },
+  { src: "/assets/photo-5.jpg", alt: "Subhadip Mondal - Floral Garden" },
+];
 
 export function AboutSection() {
   return (
@@ -25,21 +34,14 @@ export function AboutSection() {
         >
           <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-neutral-900 shadow-2xl">
             {/* Image Overlay Label */}
-            <div className="absolute top-3 left-3 z-10 glass-pill px-3 py-1 rounded-md text-[10px] font-mono-tech text-emerald-400 flex items-center gap-1.5">
+            <div className="absolute top-3 left-3 z-20 glass-pill px-3 py-1 rounded-md text-[10px] font-mono-tech text-emerald-400 flex items-center gap-1.5">
               <Terminal className="w-3 h-3" />
               <span>SUBHADIP_MONDAL.RAW</span>
             </div>
 
+            {/* Filmstrip */}
             <div className="aspect-[4/5] relative overflow-hidden bg-neutral-950">
-              <Image
-                src={PORTFOLIO_DATA.personal.profilePic}
-                alt="Subhadip Mondal"
-                fill
-                className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 40vw"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+              <PhotoFilmstrip photos={FILMSTRIP_PHOTOS} interval={3200} className="absolute inset-0" />
             </div>
 
             {/* Bottom Photo Metadata */}
@@ -55,6 +57,7 @@ export function AboutSection() {
             </div>
           </div>
         </motion.div>
+
 
         {/* Right Column: Narrative & Details */}
         <motion.div
