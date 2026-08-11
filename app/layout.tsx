@@ -97,6 +97,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Subhadip Mondal",
   url: "https://aryasubhaa.netlify.app",
+  image: "https://aryasubhaa.netlify.app/assets/photo-1.jpg",
   jobTitle: "Full-Stack Developer",
   description:
     "Full-Stack Developer building thoughtful interfaces, reliable systems, and resilient web applications.",
