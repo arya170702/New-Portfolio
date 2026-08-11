@@ -71,6 +71,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    google: "g-1xs18X4QuadunYrA1LDrX242fqX_VgyOLfxEBTrBk",
+  },
 };
 
 const jsonLd = {
@@ -106,6 +109,7 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <head>
         <link rel="canonical" href="https://aryasubhaa.netlify.app" />
+        <meta name="google-site-verification" content="g-1xs18X4QuadunYrA1LDrX242fqX_VgyOLfxEBTrBk" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
