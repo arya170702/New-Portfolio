@@ -11,6 +11,9 @@
 /out/
 /build
 
+# package-lock is platform-specific (macOS stubs for Linux SWC binaries break Netlify)
+package-lock.json
+
 # production static output
 dist
 
