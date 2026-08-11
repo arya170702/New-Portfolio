@@ -17,13 +17,10 @@ body {
   scroll-padding-top: 80px; /* account for fixed navbar */
 }
 
-/* Suppress native cursor on desktop except on text fields */
+/* Suppress native cursor on desktop when custom cursor is active */
 @media (pointer: fine) {
   body {
     cursor: none;
-  }
-  input, textarea, select, [contenteditable="true"] {
-    cursor: text !important;
   }
 }
 

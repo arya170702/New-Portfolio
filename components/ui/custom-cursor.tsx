@@ -12,11 +12,11 @@ export function CustomCursor() {
   const rawX = useMotionValue(-100);
   const rawY = useMotionValue(-100);
 
-  // Spring-smoothed positions — glow (sluggish) and dot (ultra-snappy)
-  const glowX = useSpring(rawX, { damping: 30, stiffness: 220, mass: 0.4 });
-  const glowY = useSpring(rawY, { damping: 30, stiffness: 220, mass: 0.4 });
-  const dotX  = useSpring(rawX, { damping: 28, stiffness: 450, mass: 0.1 });
-  const dotY  = useSpring(rawY, { damping: 28, stiffness: 450, mass: 0.1 });
+  // Spring-smoothed positions — original smooth physics
+  const glowX = useSpring(rawX, { damping: 25, stiffness: 200, mass: 0.5 });
+  const glowY = useSpring(rawY, { damping: 25, stiffness: 200, mass: 0.5 });
+  const dotX  = useSpring(rawX, { damping: 30, stiffness: 350, mass: 0.2 });
+  const dotY  = useSpring(rawY, { damping: 30, stiffness: 350, mass: 0.2 });
 
   useEffect(() => {
     // Only activate on fine pointer devices (desktop)
@@ -74,25 +74,26 @@ export function CustomCursor() {
 
   if (!isVisible) return null;
 
-  const glowSize = isHovered ? 140 : 120;
-  const dotSize  = isHovered ? 28  : 10;
+  // Small, compact dimensions
+  const glowSize = isHovered ? 120 : 90;
+  const dotSize  = isHovered ? 20  : 6;
 
   return (
     <>
-      {/* Ambient soft glow blob — subtle, 0.08 opacity */}
+      {/* Small ambient glow blob */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full blur-xl opacity-[0.08] bg-emerald-400 hidden md:block"
+        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full blur-lg opacity-15 bg-emerald-500 hidden md:block"
         style={{ x: glowX, y: glowY, translateX: "-50%", translateY: "-50%" }}
         animate={{ width: glowSize, height: glowSize }}
-        transition={{ type: "spring", damping: 25, stiffness: 220, mass: 0.4 }}
+        transition={{ type: "spring", damping: 25, stiffness: 200, mass: 0.5 }}
       />
 
-      {/* Precision ring dot — ultra snappy */}
+      {/* Small precision dot/ring */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-emerald-400/60 bg-emerald-400/15 hidden md:block"
+        className="fixed top-0 left-0 pointer-events-none z-50 rounded-full border border-emerald-400/70 bg-emerald-400/25 hidden md:block"
         style={{ x: dotX, y: dotY, translateX: "-50%", translateY: "-50%" }}
         animate={{ width: dotSize, height: dotSize }}
-        transition={{ type: "spring", damping: 28, stiffness: 450, mass: 0.1 }}
+        transition={{ type: "spring", damping: 30, stiffness: 350, mass: 0.2 }}
       />
     </>
   );
